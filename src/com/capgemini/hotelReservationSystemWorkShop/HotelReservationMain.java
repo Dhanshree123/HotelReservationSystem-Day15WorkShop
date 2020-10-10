@@ -24,6 +24,13 @@ public class HotelReservationMain {
 				break;
 		}
 
+		System.out.println("Find Cheapest Hotel in Date Range:-");
+		System.out.println("Enter Start Date(YYYY-MM-DD):- ");
+		String startDate = sc.next();
+		System.out.println("Enter End Date(YYYY-MM-DD):- ");
+		String endDate = sc.next();
+		HotelReservation.findCheapestHotel(startDate, endDate);
+
 		sc.close();
 	}
 
