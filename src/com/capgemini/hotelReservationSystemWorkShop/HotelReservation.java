@@ -8,8 +8,8 @@ public class HotelReservation {
 
 	public static List<Hotel> hotelList = new ArrayList<Hotel>();
 
-	public static void addRegulaRateAndHotelName(String hotelName, int regularRate) {
-		Hotel hotel = new Hotel(hotelName, regularRate);
+	public static void addRateAndHotelName(String hotelName, int weeklyRate, int weekEndRate) {
+		Hotel hotel = new Hotel(hotelName, weeklyRate, weekEndRate);
 		hotelList.add(hotel);
 	}
 
@@ -25,7 +25,7 @@ public class HotelReservation {
 			LocalDate tempEnd = end.plusDays(1);
 			int hotelRent = 0;
 			while (!(tempStart.equals(tempEnd))) {
-				hotelRent = hotelRent + hotel.getRegularRate();
+				hotelRent = hotelRent + hotel.getWeeklyRate();
 				tempStart = tempStart.plusDays(1);
 			}
 			if (hotelRent < minRate) {
