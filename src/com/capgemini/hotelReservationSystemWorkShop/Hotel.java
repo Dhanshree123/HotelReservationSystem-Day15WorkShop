@@ -9,6 +9,7 @@ public class Hotel {
 	public Hotel(String hotelName, int weeklyRate, int weekEndRate) {
 		this.hotelName = hotelName;
 		this.weeklyRate = weeklyRate;
+		this.weekEndRate = weekEndRate;
 	}
 
 	public void setHotelName(String hotelName) {
