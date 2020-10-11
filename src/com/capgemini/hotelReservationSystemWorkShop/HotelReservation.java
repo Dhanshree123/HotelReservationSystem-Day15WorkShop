@@ -135,10 +135,10 @@ public class HotelReservation {
 		String cheapestHotel = "";
 		int bestRating = 0;
 		long minRate = hotelList.stream().map(h -> calculateRegularCost(h, start, end)).min(Long::compare).get();
-		List<Hotel> min_rate_hotels = hotelList.stream().filter(h -> calculateRegularCost(h, start, end) == minRate)
+		List<Hotel> minRateHotels = hotelList.stream().filter(h -> calculateRegularCost(h, start, end) == minRate)
 				.collect(Collectors.toList());
 
-		Hotel max_rated_hotel = min_rate_hotels.stream().max((h1, h2) -> h1.getRating() - h2.getRating()).get();
+		Hotel max_rated_hotel = minRateHotels.stream().max((h1, h2) -> h1.getRating() - h2.getRating()).get();
 		cheapestHotel = max_rated_hotel.getHotelName();
 		bestRating = max_rated_hotel.getRating();
 		System.out.println(
@@ -171,10 +171,10 @@ public class HotelReservation {
 		String cheapestHotel = "";
 		int bestRating = 0;
 		long minRate = hotelList.stream().map(h -> calculateRewardCost(h, start, end)).min(Long::compare).get();
-		List<Hotel> min_rate_hotels = hotelList.stream().filter(h -> calculateRewardCost(h, start, end) == minRate)
+		List<Hotel> minRateHotels = hotelList.stream().filter(h -> calculateRewardCost(h, start, end) == minRate)
 				.collect(Collectors.toList());
 
-		Hotel max_rated_hotel = min_rate_hotels.stream().max((h1, h2) -> h1.getRating() - h2.getRating()).get();
+		Hotel max_rated_hotel = minRateHotels.stream().max((h1, h2) -> h1.getRating() - h2.getRating()).get();
 		cheapestHotel = max_rated_hotel.getHotelName();
 		bestRating = max_rated_hotel.getRating();
 		System.out.println(
