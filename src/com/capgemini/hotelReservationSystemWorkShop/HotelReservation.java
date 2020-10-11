@@ -10,8 +10,9 @@ public class HotelReservation {
 
 	public static List<Hotel> hotelList = new ArrayList<Hotel>();
 
-	public static void addRateAndHotelName(String hotelName, int rating, int weeklyRate, int weekEndRate) {
-		Hotel hotel = new Hotel(hotelName, rating, weeklyRate, weekEndRate);
+	public static void addRateAndHotelName(String hotelName, int rating, int weeklyRate, int weekEndRate,
+			int weeklyRateReward, int weekEndRateReward) {
+		Hotel hotel = new Hotel(hotelName, rating, weeklyRate, weekEndRate, weeklyRateReward, weekEndRateReward);
 		hotelList.add(hotel);
 	}
 
