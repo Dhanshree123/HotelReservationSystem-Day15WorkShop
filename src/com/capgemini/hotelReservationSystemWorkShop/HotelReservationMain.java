@@ -62,7 +62,7 @@ public class HotelReservationMain {
 		String endD = sc.next();
 		HotelReservation.findBestRatedHotel(startD, endD);
 
-		System.out.println("Find Cheapest Best Rated Hotel for Customers in Date Range:-");
+		System.out.println("Find Cheapest Best Rated Hotel for Reward Customers in Date Range:-");
 		System.out.println("Enter Start Date(YYYY-MM-DD):- ");
 		String start = sc.next();
 		boolean startValidate = isThisDateValid(start);
@@ -73,16 +73,7 @@ public class HotelReservationMain {
 		if (!(startValidate && endValidate))
 			throw new Exception("Invalid date");
 
-		System.out.println("Enter the type of customer (Regular/Reward)");
-		String customer = sc.next();
-		if (customer.equalsIgnoreCase("Regular"))
-			HotelReservation.findCheapestBestRatedHotel(start, end);
-
-		else if (customer.equalsIgnoreCase("Reward"))
-			HotelReservation.findCheapestBestRatedHotelWithRewardRates(startD, endD);
-
-		else
-			throw new Exception("Wrong Customer type");
+		HotelReservation.findCheapestBestRatedHotelWithRewardRates(startD, endD);
 
 		sc.close();
 	}
