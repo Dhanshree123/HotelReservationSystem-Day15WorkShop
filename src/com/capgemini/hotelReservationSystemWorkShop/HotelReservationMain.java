@@ -42,6 +42,13 @@ public class HotelReservationMain {
 		String end = sc.next();
 		HotelReservation.findCheapestBestRatedHotel(start, end);
 
+		System.out.println("Find Cheapest Best Rated Hotel in Date Range:-");
+		System.out.println("Enter Start Date(YYYY-MM-DD):- ");
+		String startD = sc.next();
+		System.out.println("Enter End Date(YYYY-MM-DD):- ");
+		String endD = sc.next();
+		HotelReservation.findBestRatedHotel(startD, endD);
+
 		sc.close();
 	}
 
